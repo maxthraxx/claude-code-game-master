@@ -20,7 +20,6 @@ from lib.extraction_schemas import (
 )
 from lib.json_ops import JsonOperations
 from lib.validators import Validators
-from lib.session_manager import SessionManager
 from lib.campaign_manager import CampaignManager
 
 # RAG imports - required, no fallback
@@ -45,7 +44,6 @@ class AgentExtractor:
         self.json_ops = JsonOperations(world_state_dir)
         self.validators = Validators()
         self.campaign_manager = CampaignManager(world_state_dir)
-        self.session_manager = SessionManager(world_state_dir)
 
         # RAG extractor initialized lazily in prepare_for_agents
         self._rag_extractor = None
